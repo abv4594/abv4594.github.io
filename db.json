@@ -1,0 +1,8 @@
+{
+    "Appliances": {
+        "Refrigerator" : {
+            "Description": "Bla bla",
+            "Price": 1000
+        }
+    }
+}
