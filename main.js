@@ -1,48 +1,44 @@
 let db = 
-        {
-            "Appliances": {
-                "Refrigerator" : {
-                "Description": "Bla bla",
-                "Price": 1000,
-                "img": "./img/img.jpg"
+        [
+                {
+                category: "Appliance",
+                name: "Refrigerator",
+                description: "Used for 5 years, in perfect condition, never had issues",
+                price: 1000,
+                imgUrl: "./img/img.jpg"
                 },
-                "Tami4" : {
-                "Description": "very water dispenser",
-                "Price": 900,
-                "img": "./img/img.jpg"
-                }
-            }
-        };
+                {
+                category: "Appliance",
+                name: "Tami4 BubbleX",
+                description: "Used for 4 years, in perfect condition, never had issues",
+                price: 1000,
+                imgUrl: "./img/img.jpg"
+                },
+                {
+                category: "Sports",
+                name: "Bike",
+                description: "Used for 4 years, in perfect condition, never had issues",
+                price: 1000,
+                imgUrl: "./img/img.jpg"
+                }      
+            
+        ];
         
 window.addEventListener('DOMContentLoaded', event => {
 
-    const container = document.getElementById('container');
+    const gridContainer = document.getElementById('itemGrid');
 
-    Object.keys(db).forEach(category => {
-        const categoryTitle = document.createElement('h2');
-        categoryTitle.innerText = category;
-        Object.keys(db[category]).forEach(item => {
-            const itemTitle = document.createElement('h3');
-            itemTitle.innerText = item;
-            Object.keys(db[category][item]).forEach(property => {
-                if (property !== "img") {
-                    const propertyTitle = document.createElement('p');
-                    propertyTitle.innerText = property + ': ' + db[category][item][property];
-                    itemTitle.appendChild(propertyTitle);
-                } else {
-                    // add image
-                    const imgContainerEl = document.createElement('div');
-                    imgContainerEl.classList.add('image-container');
-                    const imgEl = document.createElement('img');
-                    imgEl.classList.add('fit-image');
-                    imgEl.setAttribute('src', db[category][item][property]);
-                    imgContainerEl.appendChild(imgEl);
-                    itemTitle.appendChild(imgContainerEl);
-                }
-            })
-            categoryTitle.appendChild(itemTitle);  
-        })
-        container.appendChild(categoryTitle);
+    db.forEach(item => {
+        const itemEl = document.createElement('div');
+        itemEl.classList.add('grid-item');
+        console.log(item);
+        itemEl.innerHTML = `
+            <img src="${item.imgUrl}" alt="${item.name}" width="250" height="250">
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <p>Price: $${item.price}</p>
+        `;
+        gridContainer.appendChild(itemEl);
     })
 
 
