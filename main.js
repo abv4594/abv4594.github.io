@@ -35,6 +35,9 @@ window.addEventListener('DOMContentLoaded', event => {
             <h3 class="itemName">${item.name}</h3>
             <p class="itemDescription">${item.description}</p>
             <p class="itemPrice"> Price: $${item.price}</p>
+            <a href="whatsapp://send?phone=+972536121695&text=Hello,%20I%20have%20a%20question%20about ${item.name}...">
+                Click here to send me a WhatsApp message about this item
+            </a>
         `;
         gridContainer.appendChild(itemEl);
     })

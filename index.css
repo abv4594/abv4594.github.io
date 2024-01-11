@@ -83,6 +83,11 @@
     align-items: center;
   }
 
+  .grid-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333; /* Adjust the border color on hover if needed */
+  }
+
   .grid-item img {
     max-width: 100%; /* Ensures the image doesn't overflow its container */
     height: auto; /* Maintains aspect ratio */
