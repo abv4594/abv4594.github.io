@@ -56,13 +56,13 @@
     display: block;
 }
 
-[class^="item"] {
+/*[class^="item"] {
     padding: 5px;
 }
 
 .itemName {
     padding-top: 10px;
-}
+} */
 
 /* Define styles for the grid container */
 .grid-container {
@@ -73,20 +73,75 @@
   }
   
   /* Styles for individual grid items */
-  .grid-item {
-    border: 1px solid #ccc;
-    padding: 20px;
-    /* Add more styles for item layout, alignment, etc. */
+.grid-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+ 
+}
+
+.grid-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333; /* Adjust the border color on hover if needed */
+    /* transform: scale(1.05); /* Scale item on hover */
   }
 
-  .grid-item img {
+
+
+  
+
+.grid-item img {
     max-width: 100%; /* Ensures the image doesn't overflow its container */
     height: auto; /* Maintains aspect ratio */
     display: block; /* Fixes spacing issues caused by inline elements */
     /* Additional styles (margin, padding, etc.) to fit your design */
     margin: auto
+}
+
+
+/* Style the gallery images */
+.gallery-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for the overlay */
+    z-index: 999; /* Ensure it's above other content */
+    display: none; /* Initially hidden */
+    width: 80%; /* Adjust width as needed */
+    height: 80%; /* Adjust height as needed */
+    max-width: 600px; /* Adjust max-width as needed */
+    max-height: 600px; /* Adjust max-height as needed */
+    padding: 20px; /* Adjust padding as needed */
+    /*display: flex; Ensure centering works */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
   }
+
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust columns as needed */
+    gap: 10px;
+    max-width: 100%; /* Adjust max-width as needed */
+    max-height: 100%; /* Adjust max-height as needed */
+    overflow: auto; /* Enable scrolling if content exceeds container */
+  }
+  
+
+  .gallery-image {
+    width: 100%; /* Adjust size as needed */
+    height: auto; /* Adjust size as needed */
+    max-height: 200px; /* Adjust max height of images */
+    object-fit: cover; /* Ensure images fill the container */
+  }
+
+  .hidden {
+    display: none;
+}
+
+.visible {
+    display: flex;
+}
