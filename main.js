@@ -2,8 +2,6 @@ import db from './db.js';
         
 window.addEventListener('DOMContentLoaded', event => {
 
-    
-
     const gridContainer = document.getElementById('itemGrid');
 
     // select menu buttons and add event listeners:
@@ -39,12 +37,31 @@ window.addEventListener('DOMContentLoaded', event => {
         const itemEl = document.createElement('div');
         itemEl.classList.add('grid-item');
         console.log(item);
+
+        /* handle the whatsapp link */
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        // WhatsApp number
+        const phoneNumber = '+972536121695'; // Replace with your actual WhatsApp number
+  
+        // Define the base URL for WhatsApp
+        const baseURL = 'https://api.whatsapp.com';
+
+        // Text in the WhatsApp
+        const text = `text=Hi%20I%20wanted%20more%20info%20about%20the%20${item.name}`
+  
+        // Generate the appropriate WhatsApp link
+        const whatsappLink = isMobile
+        ? `https://wa.me/${phoneNumber}&${text}`
+        : `https://web.whatsapp.com/send?phone=${phoneNumber}&${text}`;
+
+
         itemEl.innerHTML = `
             <img src="${item.imgUrl}" alt="${item.name}" width="250" height="250">
             <h3 class="itemName">${item.name}</h3>
             <p class="itemDescription">${item.description}</p>
             <p class="itemPrice"> Price: $${item.price}</p>
-            <a href="https://web.whatsapp.com/send?phone=+972536121695&text=More%20info%20about%20the%20${item.name}..." target="_blank">
+            <a href=${whatsappLink} target="_blank">
                 WhatsApp me to get more info
             </a>
         `;
