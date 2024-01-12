@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', event => {
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
         // WhatsApp number
-        const phoneNumber = '+972536121695'; // Replace with your actual WhatsApp number
+        const phoneNumber = '972536121695'; // Replace with your actual WhatsApp number
   
         // Define the base URL for WhatsApp
         const baseURL = 'https://api.whatsapp.com';
