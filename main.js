@@ -15,6 +15,15 @@ window.addEventListener('DOMContentLoaded', event => {
         })
     })
 
+    //select hamburguer menu, add event listener;
+    const hamburger = document.querySelector('.hamburger-menu');
+    const menu = document.querySelector('.menu');
+    const hamburgerIcons = document.querySelectorAll('.hamburger-icon');
+    hamburger.addEventListener('click', function (e) {
+        menu.classList.toggle('open');
+        hamburgerIcons.forEach(icon => icon.classList.toggle('open'));
+      });
+
     // handles the menu selection
     const filter = sessionStorage.getItem("menu");
 
@@ -35,8 +44,8 @@ window.addEventListener('DOMContentLoaded', event => {
             <h3 class="itemName">${item.name}</h3>
             <p class="itemDescription">${item.description}</p>
             <p class="itemPrice"> Price: $${item.price}</p>
-            <a href="whatsapp://send?phone=+972536121695&text=Hello,%20I%20have%20a%20question%20about ${item.name}...">
-                Click here to send me a WhatsApp message about this item
+            <a href="https://web.whatsapp.com/send?phone=+972536121695&text=More%20info%20about%20the%20${item.name}..." target="_blank">
+                WhatsApp me to get more info
             </a>
         `;
         gridContainer.appendChild(itemEl);
