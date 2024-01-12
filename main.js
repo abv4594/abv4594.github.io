@@ -48,12 +48,12 @@ window.addEventListener('DOMContentLoaded', event => {
         const baseURL = 'https://api.whatsapp.com';
 
         // Text in the WhatsApp
-        const text = `text=Hi%20I%20wanted%20more%20info%20about%20the%20${item.name}`
+        const text = encodeURIComponent(`Hi, could you share more info about ${item.name}?`);
   
         // Generate the appropriate WhatsApp link
         const whatsappLink = isMobile
-        ? `https://wa.me/${phoneNumber}&${text}`
-        : `https://web.whatsapp.com/send?phone=${phoneNumber}&${text}`;
+        ? `https://wa.me/${phoneNumber}&text=${text}`
+        : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${text}`;
 
 
         itemEl.innerHTML = `
