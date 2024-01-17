@@ -43,17 +43,15 @@ window.addEventListener('DOMContentLoaded', event => {
 
         // WhatsApp number
         const phoneNumber = '972536121695'; // Replace with your actual WhatsApp number
-  
-        // Define the base URL for WhatsApp
-        const baseURL = 'https://api.whatsapp.com';
 
         // Text in the WhatsApp
-        const text = encodeURIComponent(`Hi, could you share more info about ${item.name}?`);
+        const text = `Hi, could you share more info about the ${item.name}?`;
+        const encodedText = encodeURIComponent(text);
   
         // Generate the appropriate WhatsApp link
         const whatsappLink = isMobile
-        ? `https://wa.me/${phoneNumber}&text=${text}`
-        : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${text}`;
+        ? `https://wa.me/${phoneNumber}?text=${encodedText}`
+        : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedText}`;
 
 
         itemEl.innerHTML = `
