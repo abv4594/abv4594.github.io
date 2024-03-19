@@ -27,6 +27,15 @@
   .menu li {
     margin: 15px 15px;
   }
+
+  .header-instruction {
+    font-size: 22px; /* Adjust font size as needed */
+    font-family: Arial, sans-serif; /* Specify font family */
+    color: #333; /* Specify font color */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Align the text to center */
+    margin: 20px; /* Add some space below the header instruction */
+  }
   
   .menu button {
     background-color: #ffcc00;
@@ -60,8 +69,16 @@
     padding: 5px;
 }
 
+.itemPrice {
+  font-weight: bold;
+}
+
 .itemName {
     padding-top: 10px;
+}
+
+.itemDescription {
+  text-align: center;
 }
 
 /* Define styles for the grid container */

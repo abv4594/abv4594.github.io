@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', event => {
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
         // WhatsApp number
-        const phoneNumber = '972536121695'; // Replace with your actual WhatsApp number
+        const phoneNumber = '972536121695'; 
 
         // Text in the WhatsApp
         const text = `Hi, could you share more info about the ${item.name}?`;
@@ -58,9 +58,10 @@ window.addEventListener('DOMContentLoaded', event => {
             <img src="${item.imgUrl}" alt="${item.name}" width="250" height="250">
             <h3 class="itemName">${item.name}</h3>
             <p class="itemDescription">${item.description}</p>
-            <p class="itemPrice"> Price: $${item.price}</p>
+            <p class="itemPrice"> Price: ${item.price} NIS</p>
+            <p class="itemAvailability"> Available: ${item.available}</p>
             <a href=${whatsappLink} target="_blank">
-                WhatsApp me to get more info
+                WhatsApp me about this item
             </a>
         `;
         gridContainer.appendChild(itemEl);
