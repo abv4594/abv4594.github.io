@@ -64,6 +64,7 @@ const db =
         available: "15-May-2024",
         imgUrl: "./img/maqSecar.jpg"
     },
+ 
     {
         category: "Appliances",
         name: "Dishwasher",
@@ -72,7 +73,54 @@ const db =
         available: "15-May-2024",
         imgUrl: "./img/lavaLouca.jpg"
     },
-   
+    {
+        category: "Furnitures",
+        name: "Bed + Mattress",
+        description: "Bed + Mattress 120 x 190 - used 2 years only",
+        price: 890,
+        available: "15-May-2024",
+        imgUrl: "./img/bedQueen.jpg"
+    },
+    {
+        category: "Furnitures",
+        name: "Study table",
+        description: "Study table ikea 120x60",
+        price: 250,
+        available: "Now",
+        imgUrl: "./img/studyTable.jpg"
+    },
+    {
+        category: "Furnitures",
+        name: "Mirror",
+        description: "Mirror 40x150",
+        price: 150,
+        available: "Now",
+        imgUrl: "./img/mirror.jpg"
+    },
+    {
+        category: "Furnitures",
+        name: "Student chair",
+        description: "Student chair Ikea",
+        price: 180,
+        available: "Now",
+        imgUrl: "./img/studyChair.jpg"
+    },
+    {
+        category: "Furnitures",
+        name: "Office chair",
+        description: "Office chair Ikea",
+        price: 240,
+        available: "Now",
+        imgUrl: "./img/officeChair.jpg"
+    },
+    {
+        category: "Furnitures",
+        name: "Single double bed",
+        description: "Single double bed 90x200 cm, includes two mattresses",
+        price: 390,
+        available: "Now",
+        imgUrl: "./img/doubleBed.jpg"
+    }
             
 ];
 export default db; 

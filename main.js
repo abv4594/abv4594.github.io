@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', event => {
             <p class="itemPrice"> Price: ${item.price} NIS</p>
             <p class="itemAvailability"> Available: ${item.available}</p>
             <a href=${whatsappLink} target="_blank">
-                WhatsApp me about this item
+                Let's close by Whats
             </a>
         `;
         gridContainer.appendChild(itemEl);
