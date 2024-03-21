@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Moving Sale</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <link rel="stylesheet" href="index.css">
     <script src="main.js" type="module"></script>
 </head>
@@ -35,6 +37,8 @@
           You are responsible for disassembly and transport.
           Items are in Raanana.</p>
     </div>
+
+    <button id="downloadBtn">Download Selected Items to PDF</button>
     
     <div id="itemGrid" class="grid-container">
 
