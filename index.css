@@ -45,14 +45,27 @@ header {
     background-color: #45a049; /* Darker green color */
 }
 
-.header-instruction {
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    color: #333;
-    font-weight: bold;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .header-instruction {
     text-align: center;
-    margin: 20px;
-}
+    font-size: 1.5em; /* Adjust font size as needed */
+    margin-bottom: 20px;
+  }
+
+  .instruction-box {
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+  }
+
 
 .grid-container {
     padding: 20px;
