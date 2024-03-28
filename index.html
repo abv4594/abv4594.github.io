@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Moving Sale</title>
+    <title>Pre Move Sale</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <link rel="stylesheet" href="index.css">
     <script src="main.js" type="module"></script>
 </head>
 <body>
     <header>
-        <h1>My Moving Sale</h1>
+        <h1>Special Pre Move Sale</h1>
         <nav>
 
           <!-- Hamburguer menu button-->
@@ -26,7 +27,6 @@
               <li><button class="menu-item" id="all">All</button></li>
               <li><button class="menu-item" id="app">Appliances</button></li>
               <li><button class="menu-item" id="fur">Furnitures</button></li>
-              <li><button class="menu-item" id="spo">Sports</button></li>
               <li><button class="menu-item" id="ele">Electronics</button></li>
             </ul>
           </nav>
@@ -41,13 +41,19 @@
     
       <div class="instruction-box">
         <p> Instructions: </p>
-        <p> - Click on the item to select it. </p>
-        <p> - Select the category of interest in the menu. </p>
-        <p> - Once you finish selecting, select Download to PDF to download a copy of the items you want. </p>
+        <p> 1 - Select the items. </p>
+        <p> 2 - Download them to a .pdf or .csv  </p>
+        <div class="options">
+          <button id="pdfBtn">Download to PDF</button>
+          <button id="csvBtn">Download to CSV</button>
+          <button id="allBtn">Select All</button>
+          <button id="noneBtn">Unsellect All</button>
+        </div>
       </div>
     </div>
 
-    <button id="downloadBtn">Download Selected Items to PDF</button>
+ 
+
     
     <div id="itemGrid" class="grid-container">
 

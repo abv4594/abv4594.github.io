@@ -59,11 +59,13 @@ header {
   }
 
   .instruction-box {
-    width: 70%;
+    width: 50%;
+    font-size: 1.2em; /* Adjust font size as needed */
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
     text-align: left;
+    background-color: lightblue;
   }
 
 
@@ -94,6 +96,25 @@ header {
     height: auto;
     display: block;
     margin: auto;
+}
+
+.itemTitle {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.itemDetail {
+    font-size: 14px;
+}
+
+.itemPrice {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.grid-item a {
+    font-size: 14px;
 }
 
 #downloadBtn {
@@ -127,7 +148,67 @@ header {
     transition: 0.4s;
 }
 
-@media only screen and (max-width: 600px) {
+
+
+/* Add styles for selected items */
+.selected {
+    background-color: rgba(255, 204, 0, 0.3); /* Yellow background color with reduced opacity */
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.6); /* Yellow shadow */
+}
+
+.instruction-box {
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+    background-color: lightblue;
+  }
+  
+  .options {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .options button {
+    padding: 8px 16px; /* Adjust button size */
+    font-size: 14px; /* Adjust font size */
+    border: 1px solid transparent; /* Set border color to transparent by default */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s; /* Add border-color transition */
+  }
+  
+  .options button:hover,
+  .options button:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+  }
+  
+  
+  .options button#pdfBtn {
+    background-color: #2196F3; /* Blue background color for PDF button */
+    color: white; /* White text color */
+  }
+  
+  .options button#csvBtn {
+    background-color: #2196F3; /* Orange background color for CSV button */
+    color: white; /* White text color */
+  }
+  
+  .options button#allBtn {
+    background-color: gray; /* Green background color for Select All button */
+    color: white; /* White text color */
+  }
+  
+  .options button#noneBtn {
+    background-color: gray; /* Red background color for Unselect All button */
+    color: white; /* White text color */
+  }
+
+  @media only screen and (max-width: 600px) {
     .menu {
         display: none;
     }
@@ -159,12 +240,17 @@ header {
     .hamburger-icon.open:nth-child(3) {
         transform: rotate(45deg) translate(0px, -1px);
     }
+
+    .instruction-box {
+        width: 90%;
+        font-size: 14px
+    }
+
+    .options button {
+        font-size: 12px;
+    }
+
+    .header-instruction {
+        font-size: 18px;
+    }
 }
-
-/* Add styles for selected items */
-.selected {
-    background-color: rgba(255, 204, 0, 0.3); /* Yellow background color with reduced opacity */
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.6); /* Yellow shadow */
-}
-
-

@@ -5,36 +5,6 @@ const {jsPDF} = window.jspdf;
 let dbFiltered;
 let dbDynamic;
 
-let generatePDF = () => {
-    const doc = new jsPDF();
-    let y = 10;
-    let pageNumber = 1;
-    let total = 0;
-    let dbSelected = dbDynamic.filter(item => item.selected);
-
-    dbSelected.forEach((product, index) => {
-        if (y > 250) { // Check if space for the next item is available on the page
-            doc.addPage(); // Add a new page
-            y = 10; // Reset y position
-            pageNumber++; // Increment page number
-        }
-        doc.text(`Name: ${product.name}`, 10, y);
-        doc.text(`Description: ${product.description}`, 10, y + 10);
-        doc.text(`Price: ${product.price}`, 10, y + 20);
-        total += product.price;
-        y += 40;
-
-        // Add page number at the bottom
-        if (index === dbFiltered.length - 1) {
-            doc.text(`Page ${pageNumber}`, 10, doc.internal.pageSize.height - 10);
-        }
-    });
-    doc.text(`Total of your products: ${total}`, 10, y);
-
-    doc.save('myProducts.pdf');
-}
-
-
 window.addEventListener('DOMContentLoaded', event => {
 
     if (sessionStorage.getItem('db')) {
@@ -43,10 +13,14 @@ window.addEventListener('DOMContentLoaded', event => {
         dbDynamic = db;
     }
 
+
+    const optionsFunctions = [pdfBtn, csvBtn, allBtn, noneBtn];
+
+    const optionsBtns = document.querySelectorAll('.options button');
+    optionsBtns.forEach((btn, index) => btn.addEventListener('click', optionsFunctions[index]));
     const gridContainer = document.getElementById('itemGrid');
 
-    const downloadBtn = document.getElementById('downloadBtn');
-    downloadBtn.addEventListener('click', generatePDF);
+  
 
     // select menu buttons and add event listeners:
     const buttons = document.querySelectorAll('.menu button');
@@ -83,7 +57,6 @@ window.addEventListener('DOMContentLoaded', event => {
         if (item.selected) itemEl.classList.add('selected');
         itemEl.setAttribute('data-id', item.id);
         itemEl.addEventListener('click', selectItem)
-        console.log(item.selected);
 
         /* handle the whatsapp link */
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -103,10 +76,10 @@ window.addEventListener('DOMContentLoaded', event => {
 
         itemEl.innerHTML = `
             <img src="${item.imgUrl}" alt="${item.name}" width="250" height="250">
-            <h3 class="itemName">${item.name}</h3>
-            <p class="itemDescription">${item.description}</p>
-            <p class="itemPrice"> Price: ${item.price} NIS</p>
-            <p class="itemAvailability"> Available: ${item.available}</p>
+            <p class="itemTitle">${item.name}</p>
+            <p class="itemDetail">${item.description}</p>
+            <p class="itemDetail"> Available: ${item.available} </p>
+            <p class="itemPrice"> Price: ${item.price} NIS </p>
             <a href=${whatsappLink} target="_blank">
                 I want more info about this item
             </a>
@@ -127,7 +100,87 @@ function selectItem(e){
         selectedItem.selected = true;
     }
     sessionStorage.setItem('db', JSON.stringify(dbDynamic)); // store status of db
+    
 }
 
 
+
+function pdfBtn () {
+    const doc = new jsPDF();
+    let y = 10;
+    let pageNumber = 1;
+    let total = 0;
+    const dbSelected = dbDynamic.filter(item => item.selected);
+
+    dbSelected.forEach((product, index) => {
+        if (y > 250) { // Check if space for the next item is available on the page
+            doc.addPage(); // Add a new page
+            y = 10; // Reset y position
+            pageNumber++; // Increment page number
+        }
+        doc.text(`Category: ${product.category} | Name: ${product.name}`, 10, y);
+        doc.text(`Description: ${product.description}`, 10, y + 10);
+        doc.text(`Price: ${product.price} | Available: ${product.available}`, 10, y + 20);
+        total += product.price;
+        y += 40;
+
+        // Add page number at the bottom
+        if (index === dbFiltered.length - 1) {
+            doc.text(`Page ${pageNumber}`, 10, doc.internal.pageSize.height - 10);
+        }
+    });
+    doc.text(`Total of your products: ${total}`, 10, y);
+
+    doc.save('myProducts.pdf');
+}
+
+function csvBtn() {
+    const dbSelected = dbDynamic.filter(item => item.selected);
+    let csv = 'Category, Name, Description, Available, Price NIS\n';
+    let total = 0;
+    dbSelected.forEach(item => {
+        csv += `${item.category}, ${item.name}, ${item.description}, ${item.available}, ${item.price}\n`;
+        total += item.price;
+    })
+    csv += `total:,,,, ${total}\n`;
+    const blob = new Blob([csv], {type: 'text/csv;charset=utf-8'});
+    saveAs(blob, 'products.csv');
+}
+
+function allBtn() {
+
+    dbFiltered.forEach(item => {
+        if(!item.selected) {
+            item.selected = true;
+            findElById(item.id).classList.add('selected');
+        }
+    })
+    sessionStorage.setItem('db', JSON.stringify(dbDynamic)); // store status of db
+
+}
+
+function noneBtn() {
+
+    dbFiltered.forEach(item => {
+        if(item.selected) {
+            item.selected = false;
+            findElById(item.id).classList.remove('selected');
+        }
+    })
+    sessionStorage.setItem('db', JSON.stringify(dbDynamic)); // store status of db
+
+}
+
+function findElById(id) {
+    const itemEls = document.querySelectorAll('.grid-item');
+    let searchedItem;
+    console.log(itemEls.length);
+    itemEls.forEach(itemEl => {
+        if (parseInt(itemEl.getAttribute('data-id')) === id) {
+            searchedItem = itemEl;
+        }
+    })
+
+    return searchedItem;
+}
 
