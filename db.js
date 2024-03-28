@@ -185,7 +185,7 @@ const db =
         id: 19,
         category: "Furnitures",
         name: "Sofa",
-        description: "Sofa X x X IKEA",
+        description: "Sofa IKEA blue 277 x 90 cm (Chaise 165 cm)",
         price: 600,
         available: "15-May-2024",
         imgUrl: "./img/sofa.jpg",
@@ -195,7 +195,7 @@ const db =
         id: 20,
         category: "Furnitures",
         name: "Dinner Table + 6 chairs",
-        description: "In glass - gray with chairs - 220cm x 96cm",
+        description: "In glass - gray with chairs - 220 x 96 cm",
         price: 750,
         available: "15-May-2024",
         imgUrl: "./img/dinnerTable.jpg",
@@ -249,6 +249,26 @@ const db =
         price: 180,
         available: "Now",
         imgUrl: "./img/googleWifi.jpg",
+        selected: false
+    },
+    {
+        id: 26,
+        category: "Furniture",
+        name: "TV Stand",
+        description: "TV Stand BYAS IKEA 160 x 42 x 45",
+        price: 180,
+        available: "15-May-2024",
+        imgUrl: "./img/rack.jpg",
+        selected: false
+    },
+    {
+        id: 27,
+        category: "Appliances",
+        name: "5 filters + 1 Lamp Tami4 BubbleX",
+        description: "5 filters + 1 Lamp Tami4 BubbleX - NEW!",
+        price: 500,
+        available: "now",
+        imgUrl: "./img/tami4Filters.jpg",
         selected: false
     }
             
