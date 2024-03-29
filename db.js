@@ -15,7 +15,7 @@ const db =
         category: "Electronics",
         name: "Scanner Fujitsu",
         description: "Model IX500",
-        price: 590,
+        price: 490,
         available: "now",
         imgUrl: "./img/scannerFujitsu.jpg",
         selected: false
@@ -65,7 +65,7 @@ const db =
         category: "Appliances",
         name: "Washing machine",
         description: "Washing machine 8Kg Samsung",
-        price: 700,
+        price: 600,
         available: "15-May-2024",
         imgUrl: "./img/maqLavar.jpg",
         selected: false
@@ -75,7 +75,7 @@ const db =
         category: "Appliances",
         name: "Clothes dryer",
         description: "Drying machine 7Kg Indesit",
-        price: 500,
+        price: 450,
         available: "15-May-2024",
         imgUrl: "./img/maqSecar.jpg",
         selected: false
@@ -186,7 +186,7 @@ const db =
         category: "Furnitures",
         name: "Sofa",
         description: "Sofa IKEA blue 277 x 90 cm (Chaise 165 cm)",
-        price: 600,
+        price: 550,
         available: "15-May-2024",
         imgUrl: "./img/sofa.jpg",
         selected: false
@@ -299,6 +299,16 @@ const db =
         price: 490,
         available: "Now",
         imgUrl: "./img/crosswave.jpg",
+        selected: false
+    },
+    {
+        id: 31,
+        category: "Electronics",
+        name: "Printer HP",
+        description: "Printer HP 3545",
+        price: 200,
+        available: "15-May-2024",
+        imgUrl: "./img/printer.jpg",
         selected: false
     },
     

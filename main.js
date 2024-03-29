@@ -92,8 +92,12 @@ window.addEventListener('DOMContentLoaded', event => {
 })
 
 function selectItem(e){
-    e.target.classList.toggle('selected');
-    let selectedItem = dbDynamic.filter(item => item.id === parseInt(e.target.getAttribute('data-id')))[0];
+    let el = e.target;
+    if (e.target.tagName.toLocaleLowerCase() === 'img') {
+        el = e.target.parentNode;
+    }
+    el.classList.toggle('selected');
+    let selectedItem = dbDynamic.filter(item => item.id === parseInt(el.getAttribute('data-id')))[0];
     if (selectedItem.selected) {
         selectedItem.selected = false;
     } else {
