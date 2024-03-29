@@ -235,8 +235,8 @@ const db =
         id: 24,
         category: "Furnitures",
         name: "Side table",
-        description: "Side table with decorations",
-        price: 170,
+        description: "Side table IKEA",
+        price: 50,
         available: "Now",
         imgUrl: "./img/sideTable.jpg",
         selected: false
