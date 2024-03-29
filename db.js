@@ -270,7 +270,38 @@ const db =
         available: "now",
         imgUrl: "./img/tami4Filters.jpg",
         selected: false
-    }
+    },
+    {
+        id: 28,
+        category: "Appliances",
+        name: "Dyson V11",
+        description: "Dyson with stand and add-ons",
+        price: 700,
+        available: "15-May-2024",
+        imgUrl: "./img/dyson.jpg",
+        selected: false
+    },
+    {
+        id: 29,
+        category: "Appliances",
+        name: "Bosch pressure washer",
+        description: "Bosch Easyaquatak 110",
+        price: 290,
+        available: "15-May-2024",
+        imgUrl: "./img/boschPressure.jpg",
+        selected: false
+    },
+    {
+        id: 30,
+        category: "Appliances",
+        name: "Bissel Crosswave",
+        description: "Bissel Crosswave 2582N",
+        price: 490,
+        available: "Now",
+        imgUrl: "./img/crosswave.jpg",
+        selected: false
+    },
+    
             
 ];
 export default db; 
