@@ -176,122 +176,103 @@ header {
 }
 
 .instruction-box {
-  width: 50%;
-  border: 2px solid #007bff; /* Highlighted border effect */
-  border-radius: 10px; /* Rounded border */
-  padding: 20px;
-  text-align: left;
-  background-color: #f5f5f5; /* Light gray background color */
-  margin-top: 20px;
-  font-size: 1.2em;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Shadow effect */
-}
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+    background-color: lightblue;
+  }
+  
+  .options {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .options button {
+    padding: 8px 16px; /* Adjust button size */
+    font-size: 14px; /* Adjust font size */
+    border: 1px solid transparent; /* Set border color to transparent by default */
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s, border-color 0.3s; /* Add border-color transition */
+  }
 
-.instruction-box {
-  width: 50%;
-  border: 2px solid #007bff; /* Highlighted border effect */
-  border-radius: 10px; /* Rounded border */
-  padding: 20px;
-  text-align: left;
-  background-color: #f5f5f5; /* Light gray background color */
-  margin-top: 20px;
-  font-size: 1.2em;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Shadow effect */
-}
+  .options label {
+    font-size: medium;
+  }
+  
+  .options button:hover,
+  .options button:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+  }
+  
+  
+  .options button#pdfBtn {
+    background-color: #2196F3; /* Blue background color for PDF button */
+    color: white; /* White text color */
+  }
+  
+  .options button#csvBtn {
+    background-color: #2196F3; /* Orange background color for CSV button */
+    color: white; /* White text color */
+  }
+  
+  /*.options button#allBtn {
+    background-color: gray; 
+    color: white; 
+  } */
+  
+  .options button#noneBtn {
+    background-color: gray; /* Red background color for Unselect All button */
+    color: white; /* White text color */
+  }
 
-.instruction-box p {
-  margin-bottom: 10px;
-}
-
-.options {
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.options button {
-  flex: 1; /* Equal width for all buttons */
-  padding: 12px 0; /* Adjusted button height */
-  font-size: 16px; /* Adjusted font size */
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: #007bff; /* Blue background color for buttons */
-  color: white; /* White text color */
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add transitions */
-}
-
-.options button:hover,
-.options button:focus {
-  background-color: #0056b3; /* Darker blue background color on hover */
-}
-
-.options button#pdfBtn,
-.options button#csvBtn {
-  margin-right: 5px; /* Add spacing between buttons */
-}
-
-.options button#noneBtn {
-  background-color: #dc3545; /* Red background color for Unselect All button */
-}
-
-.options button#noneBtn:hover {
-  background-color: #c82333; /* Darker red background color on hover */
-}
-
-/* Style the checkbox container */
+  /* Style the checkbox container */
 .checkbox-container {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 8px 16px;
-}
-
-/*Style the checkbox */
-.checkbox-container input[type="checkbox"] {
-  display: none;
-}
-
-/* Style the checkbox appearance */
-.checkbox-container input[type="checkbox"] + label {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* Style the checkbox appearance when checked */
-.checkbox-container input[type="checkbox"]:checked + label::before {
-  content: "\2713";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  border: 2px solid #007bff;
-  border-radius: 3px;
-  background-color: #fff;
-}
-
-/* Style the checkbox label text */
-.checkbox-container label {
-  font-size: 16px;
-}
-
-/* Hover effect for Only Available checkbox */
-.checkbox-container:hover input[type="checkbox"] + label {
-  color: #007bff; /* Change text color on hover */
-}
-
-/* Hover effect for Only Available checkbox */
-.checkbox-container:hover input[type="checkbox"] + label::before {
-  border-color: #007bff; /* Change border color on hover */
-}
-
-
+    display: inline-block;
+    vertical-align: middle; /* Align items vertically */
+    padding: 8px 16px;
+  }
+  
+  /*Style the checkbox */
+  .checkbox-container input[type="checkbox"] {
+    display: none; /* Hide the actual checkbox */
+  } 
+  
+  /* Style the checkbox appearance */
+  .checkbox-container input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 30px; /* Adjust space between the checkbox and label */
+    cursor: pointer;
+    display: inline-block; /* Ensure label and checkbox are displayed inline */
+    vertical-align: middle; /* Align items vertically */
+  }
+  
+  /* Style the checkbox appearance when checked */
+  .checkbox-container input[type="checkbox"]:checked + label::before {
+    content: "\2713"; /* Checkmark character */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px; /* Size of the checkbox */
+    height: 20px; /* Size of the checkbox */
+    line-height: 20px; /* Vertical alignment of the checkmark */
+    text-align: center; /* Horizontal alignment of the checkmark */
+    border: 2px solid #007bff; /* Border color when checked */
+    border-radius: 3px; /* Border radius */
+    background-color: #fff; /* Background color when checked */
+  }
+  
+  /* Style the checkbox label text */
+  .checkbox-container label {
+    font-size: 16px;
+  }
 
   @media only screen and (max-width: 600px) {
     .menu {
@@ -332,20 +313,11 @@ header {
     }
 
     .options button {
-        flex: 1;
         font-size: 12px;
         padding: 1px;
     }
 
     .header-instruction {
         font-size: 18px;
-    }
-
-    .checkbox-container {
-      padding: 8px 4px;
-    }
-
-    .checkbox-container label {
-      font-size: small;
     }
 }

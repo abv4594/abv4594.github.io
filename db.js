@@ -10,7 +10,8 @@ const db =
         price: 200,
         available: "now",
         imgUrl: "./img/monitorSamsung.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ const db =
         price: 490,
         available: "now",
         imgUrl: "./img/scannerFujitsu.jpg",
-        selected: false
+        selected: false,
+        sold: false
     },
     {
         id: 3,
@@ -30,7 +32,8 @@ const db =
         price: 450,
         available: "now",
         imgUrl: "./img/xBox.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 4,
@@ -40,7 +43,8 @@ const db =
         price: 890,
         available: "15-May-2024",
         imgUrl: "./img/forno.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 5,
@@ -50,7 +54,8 @@ const db =
         price: 800,
         available: "15-May-2024",
         imgUrl: "./img/geladeira.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 6,
@@ -60,7 +65,8 @@ const db =
         price: 350,
         available: "now",
         imgUrl: "./img/tvPhillips55.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 7,
@@ -70,7 +76,8 @@ const db =
         price: 600,
         available: "15-May-2024",
         imgUrl: "./img/maqLavar.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 8,
@@ -80,7 +87,8 @@ const db =
         price: 450,
         available: "15-May-2024",
         imgUrl: "./img/maqSecar.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
  
     {
@@ -91,7 +99,8 @@ const db =
         price: 250,
         available: "15-May-2024",
         imgUrl: "./img/lavaLouca.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 10,
@@ -101,7 +110,8 @@ const db =
         price: 890,
         available: "15-May-2024",
         imgUrl: "./img/bedQueen.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 11,
@@ -111,7 +121,8 @@ const db =
         price: 250,
         available: "Now",
         imgUrl: "./img/studyTable.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 12,
@@ -121,7 +132,8 @@ const db =
         price: 150,
         available: "Now",
         imgUrl: "./img/mirror.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 13,
@@ -131,7 +143,8 @@ const db =
         price: 180,
         available: "Now",
         imgUrl: "./img/studyChair.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 14,
@@ -141,17 +154,19 @@ const db =
         price: 240,
         available: "Now",
         imgUrl: "./img/officeChair.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 15,
         category: "Furnitures",
-        name: "Single double bed",
+        name: "Single double bed (1)",
         description: "Single double bed 90x200 cm - includes two mattresses",
         price: 290,
         available: "Now",
         imgUrl: "./img/doubleBed.jpg",
-        selected: false
+        selected: false,
+        sold: false
     },
     {
         id: 16,
@@ -161,7 +176,8 @@ const db =
         price: 890,
         available: "15-May-2024",
         imgUrl: "./img/tami4.jpg",
-        selected: false
+        selected: false,
+        sold: false
     },
     {
         id: 17,
@@ -171,7 +187,8 @@ const db =
         price: 300,
         available: "15-May-2024",
         imgUrl: "./img/ninja.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 18,
@@ -181,7 +198,8 @@ const db =
         price: 180,
         available: "15-May-2024",
         imgUrl: "./img/airfryer.jpg",
-        selected: false
+        selected: false,
+        sold: false
     },
     {
         id: 19,
@@ -191,7 +209,8 @@ const db =
         price: 550,
         available: "15-May-2024",
         imgUrl: "./img/sofa.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 20,
@@ -201,7 +220,8 @@ const db =
         price: 750,
         available: "15-May-2024",
         imgUrl: "./img/dinnerTable.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 21,
@@ -211,7 +231,8 @@ const db =
         price: 200,
         available: "Now",
         imgUrl: "./img/iRobot.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 22,
@@ -221,7 +242,8 @@ const db =
         price: 2200,
         available: "15-May-2024",
         imgUrl: "./img/kingBed.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 23,
@@ -231,7 +253,8 @@ const db =
         price: 50,
         available: "Now",
         imgUrl: "./img/sideCart.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 24,
@@ -241,7 +264,8 @@ const db =
         price: 50,
         available: "Now",
         imgUrl: "./img/sideTable.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 25,
@@ -251,7 +275,8 @@ const db =
         price: 180,
         available: "Now",
         imgUrl: "./img/googleWifi.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 26,
@@ -261,7 +286,8 @@ const db =
         price: 180,
         available: "15-May-2024",
         imgUrl: "./img/rack.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 27,
@@ -271,7 +297,8 @@ const db =
         price: 500,
         available: "now",
         imgUrl: "./img/tami4Filters.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 28,
@@ -281,7 +308,8 @@ const db =
         price: 700,
         available: "15-May-2024",
         imgUrl: "./img/dyson.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 29,
@@ -291,7 +319,8 @@ const db =
         price: 290,
         available: "15-May-2024",
         imgUrl: "./img/boschPressure.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 30,
@@ -301,7 +330,8 @@ const db =
         price: 490,
         available: "Now",
         imgUrl: "./img/crosswave.jpg",
-        selected: false
+        selected: false,
+        sold: true
     },
     {
         id: 31,
@@ -311,7 +341,19 @@ const db =
         price: 200,
         available: "15-May-2024",
         imgUrl: "./img/printer.jpg",
-        selected: false
+        selected: false,
+        sold: true
+    },
+    {
+        id: 32,
+        category: "Furnitures",
+        name: "Single double bed (2)",
+        description: "Single double bed 90x200 cm - includes two mattresses",
+        price: 290,
+        available: "Now",
+        imgUrl: "./img/doubleBed.jpg",
+        selected: false,
+        sold: false
     },
     
             

@@ -3,6 +3,7 @@ import db from './db.js';
 const {jsPDF} = window.jspdf;
 
 let dbFiltered;
+let dbFilteredAndAvailable;
 let dbDynamic;
 
 window.addEventListener('DOMContentLoaded', event => {
@@ -13,12 +14,23 @@ window.addEventListener('DOMContentLoaded', event => {
         dbDynamic = db;
     }
 
-
     const optionsFunctions = [pdfBtn, csvBtn, allBtn, noneBtn];
 
     const optionsBtns = document.querySelectorAll('.options button');
     optionsBtns.forEach((btn, index) => btn.addEventListener('click', optionsFunctions[index]));
     const gridContainer = document.getElementById('itemGrid');
+    const availableCheck = document.getElementById("available");
+    if (sessionStorage.getItem('onlyAvailable') === "true") {
+        availableCheck.checked = true;
+    }
+    availableCheck.addEventListener("change", function(event) {
+        if (event.target.checked) {
+          sessionStorage.setItem("onlyAvailable", "true");
+        } else {
+            sessionStorage.setItem("onlyAvailable", "false");
+        }
+        location.reload();
+      });
 
   
 
@@ -44,20 +56,31 @@ window.addEventListener('DOMContentLoaded', event => {
     const filter = sessionStorage.getItem("menu");
 
     
-
+    /* filter 1: category */
     if (filter && filter !== 'all') {
         dbFiltered = dbDynamic.filter(item => item.category.toLocaleLowerCase() == filter)
     } else {
         dbFiltered = dbDynamic;
     }
 
-    dbFiltered.forEach(item => {
+    /*filter 2: available*/
+    const availableSel = sessionStorage.getItem("onlyAvailable");
+   
+    if (availableSel === "true") {
+        dbFilteredAndAvailable = dbFiltered.filter(item => !(item.sold));
+    } else {
+        dbFilteredAndAvailable = dbFiltered;
+    }
+     
+
+    dbFilteredAndAvailable.forEach(item => {
         const itemEl = document.createElement('div');
         itemEl.classList.add('grid-item');
         if (item.selected) itemEl.classList.add('selected');
         itemEl.setAttribute('data-id', item.id);
-        itemEl.addEventListener('click', selectItem)
-
+        if (!(item.sold)) {
+            itemEl.addEventListener('click', selectItem)
+        };
         /* handle the whatsapp link */
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -84,6 +107,17 @@ window.addEventListener('DOMContentLoaded', event => {
                 I want more info about this item
             </a>
         `;
+
+        // if sold add overlay
+        if (item.sold) {
+            const itemSoldEl = document.createElement('div');
+            itemSoldEl.classList.add('overlay');
+            itemSoldEl.innerHTML = `
+            <p class="sold-text">SOLD</p>
+            `;
+            itemEl.appendChild(itemSoldEl);
+        }
+
         gridContainer.appendChild(itemEl);
     })
 
@@ -96,8 +130,9 @@ function selectItem(e){
     if (e.target.tagName.toLocaleLowerCase() === 'img') {
         el = e.target.parentNode;
     }
-    el.classList.toggle('selected');
     let selectedItem = dbDynamic.filter(item => item.id === parseInt(el.getAttribute('data-id')))[0];
+    if (selectedItem.sold) return;
+    el.classList.toggle('selected');
     if (selectedItem.selected) {
         selectedItem.selected = false;
     } else {
@@ -154,7 +189,7 @@ function csvBtn() {
 function allBtn() {
 
     dbFiltered.forEach(item => {
-        if(!item.selected) {
+        if(!item.selected && !item.sold) {
             item.selected = true;
             findElById(item.id).classList.add('selected');
         }
