@@ -166,7 +166,7 @@ const db =
         available: "Now",
         imgUrl: "./img/doubleBed.jpg",
         selected: false,
-        sold: false
+        sold: true
     },
     {
         id: 16,
