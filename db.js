@@ -177,7 +177,7 @@ const db =
         available: "15-May-2024",
         imgUrl: "./img/tami4.jpg",
         selected: false,
-        sold: false
+        sold: true
     },
     {
         id: 17,
@@ -353,7 +353,7 @@ const db =
         available: "Now",
         imgUrl: "./img/doubleBed.jpg",
         selected: false,
-        sold: false
+        sold: true
     },
     
             
